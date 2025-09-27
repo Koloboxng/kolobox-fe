@@ -35,6 +35,13 @@ jobs:
       
     - name: Build application
       run: npm run build
+      env:
+        VUE_APP_NODE_ENV: ${{ secrets.VUE_APP_NODE_ENV }}
+        VUE_APP_APIROOT_STAGING: ${{ secrets.VUE_APP_APIROOT_STAGING }}
+        VUE_APP_PAYSTACK_KEY_TEST: ${{ secrets.VUE_APP_PAYSTACK_KEY_TEST }}
+        VUE_APP_FLUTTERWAVE_KEY_TEST: ${{ secrets.VUE_APP_FLUTTERWAVE_KEY_TEST }}
+        VUE_APP_KOLOFLEX_SUBACCOUNT_TEST: ${{ secrets.VUE_APP_KOLOFLEX_SUBACCOUNT_TEST }}
+        VUE_APP_KOLOTARGET_SUBACCOUNT_TEST: ${{ secrets.VUE_APP_KOLOTARGET_SUBACCOUNT_TEST }}
       
     - name: Update server code and deploy
       uses: appleboy/ssh-action@v0.1.7
@@ -83,6 +90,13 @@ jobs:
       
     - name: Build application
       run: npm run build
+      env:
+        VUE_APP_NODE_ENV: ${{ secrets.VUE_APP_NODE_ENV_PROD }}
+        VUE_APP_APIROOT_LIVE: ${{ secrets.VUE_APP_APIROOT_LIVE }}
+        VUE_APP_PAYSTACK_KEY_LIVE: ${{ secrets.VUE_APP_PAYSTACK_KEY_LIVE }}
+        VUE_APP_FLUTTERWAVE_KEY_LIVE: ${{ secrets.VUE_APP_FLUTTERWAVE_KEY_LIVE }}
+        VUE_APP_KOLOFLEX_SUBACCOUNT_LIVE: ${{ secrets.VUE_APP_KOLOFLEX_SUBACCOUNT_LIVE }}
+        VUE_APP_KOLOTARGET_SUBACCOUNT_LIVE: ${{ secrets.VUE_APP_KOLOTARGET_SUBACCOUNT_LIVE }}
       
     - name: Update server code and deploy
       uses: appleboy/ssh-action@v0.1.7
