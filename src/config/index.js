@@ -24,8 +24,8 @@ const LOCAL_KEYS = {
 
 const getConfig = () => {
   const env = process.env.VUE_APP_NODE_ENV;
-  console.log("🚀 Environment detected:", env)
-  console.log("📡 API Root:", env === 'production' ? LIVE_KEYS.APIROOT : env === 'development' ? STAGING_KEYS.APIROOT : LOCAL_KEYS.APIROOT)
+  console.log("node env is ", env)
+  console.log("node env is process.env.VUE_APP_NODE_ENV ", process.env.VUE_APP_NODE_ENV)
   
   if (env === 'production') return LIVE_KEYS;
   if (env === 'development') return STAGING_KEYS;

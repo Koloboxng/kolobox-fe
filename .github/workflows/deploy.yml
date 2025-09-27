@@ -3,6 +3,16 @@ name: Deploy Vue 2 App
 on:
   push:
     branches: [ main, staging ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
 
 jobs:
   deploy-staging:
@@ -34,6 +44,7 @@ jobs:
         key: ${{ secrets.STAGING_SSH_KEY }}
         source: "dist/*"
         target: "/var/www/html/vue/kolobox-webclient/"
+        fingerprint: ${{ secrets.STAGING_FINGERPRINT }}
         
     - name: Restart nginx
       uses: appleboy/ssh-action@v0.1.7
