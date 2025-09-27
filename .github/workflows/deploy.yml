@@ -44,7 +44,6 @@ jobs:
         key: ${{ secrets.STAGING_SSH_KEY }}
         source: "dist/*"
         target: "/var/www/html/vue/kolobox-webclient/"
-        fingerprint: ${{ secrets.STAGING_FINGERPRINT }}
         
     - name: Restart nginx
       uses: appleboy/ssh-action@v0.1.7
