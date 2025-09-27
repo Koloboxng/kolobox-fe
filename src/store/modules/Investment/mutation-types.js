@@ -1,0 +1,3 @@
+export const UPDATE_NEW_PRODUCT = 'UPDATE_NEW_PRODUCT';
+export const PRODUCT_ID = 'PRODUCT_ID';
+export const UPDATE_USER_GOAL = 'UPDATE_USER_GOAL';

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv=“Pragma” content=”no-cache”>
+  <meta http-equiv=“Expires” content=”-1″>
+  <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+  <title>Kolobox- let your money work for you</title>
+  <link rel="stylesheet" href="./css/custom.css">
+  <link rel=icon href="./img/kolobox-favi.ico">
+
+  <link rel="manifest" href="<%=
+      htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+  <meta name="theme-color" content="#F9F9FA">
+
+  <% for (var chunk of webpack.chunks) {
+      for (var file of chunk.files) {
+      if (file.match(/\.(js|css)$/)) { %>
+  <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+  <% }}} %>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800|Material+Icons" rel="stylesheet dns-prefetch preconnect"
+    type="text/css">
+  <script>
+    if (window.navigator && navigator.serviceWorker) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but kolobox-web doesn't
+      work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app">
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous" async></script>
+  <!----<script async>
+    $(document).on("ready", function(){
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init(".js-slick-carousel");
+    });
+  </script>-->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118661770-1"></script> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP1WKQF3LQ"></script>
+  <!-- <script async>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-118661770-1");
+  </script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HP1WKQF3LQ');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous" async></script>
+  <script src="https://js.paystack.co/v1/inline.js" defer></script>
+  <script src="https://checkout.flutterwave.com/v3.js" defer></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

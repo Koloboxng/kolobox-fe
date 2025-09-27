@@ -1,0 +1,214 @@
+li a {
+font-size: 13px;
+}
+
+/* body {
+    background-image: url("../img/topheaderbg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 630px;
+
+ 	font-family: 'Open Sans', sans-serif;
+ } */
+ .parag-font{
+    font-size: 13px;
+ }
+.connect-line{
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+ }
+.featured-bg {
+    background-image: url("../img/featuredbg.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    min-height: 811px;
+    background-position: center; 
+}
+
+.bg-curve {
+    width: 100%;
+    height: 630px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004d91+0,00062a+100 */
+background: #004d91; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #004d91 0%, #00062a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #004d91 0%,#00062a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #004d91 0%,#00062a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004d91', endColorstr='#00062a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 68%, 0% 50%);
+clip-path: polygon(0 0, 100% 0, 100% 68%, 0% 50%);
+
+}
+
+.page-header {
+    background: rgba(0,74,139,1);
+background: -moz-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,74,139,1)), color-stop(100%, rgba(0,35,84,1)));
+background: -webkit-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: linear-gradient(135deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004a8b', endColorstr='#002354', GradientType=1 );
+
+
+
+    width: 100%;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+ }
+
+.classE{
+    position: relative;
+    z-index: 3;
+}
+.featured1{
+
+    background-image: url("../img/feature-icon-1.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.featured2{
+
+    background-image: url("../img/feature-icon-2.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.featured3{
+
+    background-image: url("../img/feature-icon-3.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.featured4{
+
+    background-image: url("../img/feature-icon-4.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.featured5{
+
+    background-image: url("../img/feature-icon-5.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.featured6{
+
+    background-image: url("../img/feature-icon-6.png");
+    list-style: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+}
+.signUpsec{
+    color: #ffffff;
+font-size: 2rem;
+text-align: center;
+font-weight: 700;
+}
+.org-color{
+    color: #ff8700;
+}
+.faqbg{
+    background-color: #eef7ff;
+    color: #343434;
+    font-style: 14px;
+    margin-bottom: 10px;
+}
+.ft-siz{font-size: 14px;}
+
+.blogP{
+     
+    font-size: 13px;
+
+}
+.morelink{
+    font-size: 12px;
+    text-decoration: underline;
+letter-spacing: 3px;
+
+}
+.btnRadius{
+    background-color: #ffffff;
+    color: #082e61;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+}
+
+.fontWB
+{
+    font-weight: 500;
+}
+.testiColor{
+    color: #ff8900;
+}
+.testimoBG{
+
+    background-color: #ffffff;
+    min-height: 300px;
+    padding: 50px;
+}
+.testiFont{
+        font-size: 14px;
+}
+.abtBG{
+    background-image: url("../img/aboutBG.png");
+    width: 100%;
+    min-height: 753px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.abMT{
+    margin-top: 200px;
+}
+.abtiFont{
+        font-size: 14px;
+}
+.testiBGN{
+    background: rgba(0,74,139,1);
+background: -moz-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,74,139,1)), color-stop(100%, rgba(0,35,84,1)));
+background: -webkit-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+background: linear-gradient(135deg, rgba(0,74,139,1) 0%, rgba(0,35,84,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004a8b', endColorstr='#002354', GradientType=1 );
+}
+.chatboxIcon{
+    width: 105px;
+    position: fixed; right: 50px; bottom: 15px; z-index: 100; cursor: pointer;
+}
+.testiClor{
+    color: #ffffff;
+}
+.footer-font{
+    font-size: 11px;
+}
+.pension-color{
+    color: #ff8900;
+}
+.footBG{
+    color: #ffffff;
+    background-color: #000520;
+    line-height: 18px;
+}
+

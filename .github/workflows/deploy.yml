@@ -1,0 +1,82 @@
+name: Deploy Vue 2 App
+
+on:
+  push:
+    branches: [ main, staging ]
+
+jobs:
+  deploy-staging:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    environment: staging
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '12'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      
+    - name: Deploy to staging
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.STAGING_SSH_KEY }}
+        source: "dist/*"
+        target: "/var/www/html/vue/kolobox-webclient/"
+        
+    - name: Restart nginx
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.STAGING_SSH_KEY }}
+        script: sudo service nginx restart
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '12'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      
+    - name: Deploy to production
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.PROD_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.PROD_SSH_KEY }}
+        source: "dist/*"
+        target: "/var/www/html/vue/kolobox-webclient-prod/"
+        
+    - name: Restart nginx
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.PROD_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.PROD_SSH_KEY }}
+        script: sudo service nginx restart
