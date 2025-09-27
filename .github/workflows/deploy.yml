@@ -36,7 +36,17 @@ jobs:
     - name: Build application
       run: npm run build
       
-    - name: Deploy to staging
+    - name: Update server code and deploy
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.STAGING_SSH_KEY }}
+        script: |
+          cd /var/www/html/vue/kolobox-webclient
+          git pull origin staging
+          
+    - name: Deploy built files
       uses: appleboy/scp-action@v0.1.4
       with:
         host: ${{ secrets.STAGING_HOST }}
@@ -74,7 +84,17 @@ jobs:
     - name: Build application
       run: npm run build
       
-    - name: Deploy to production
+    - name: Update server code and deploy
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.PROD_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.PROD_SSH_KEY }}
+        script: |
+          cd /var/www/html/vue/kolobox-webclient-prod
+          git pull origin main
+          
+    - name: Deploy built files
       uses: appleboy/scp-action@v0.1.4
       with:
         host: ${{ secrets.PROD_HOST }}
