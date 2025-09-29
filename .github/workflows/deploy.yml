@@ -123,4 +123,4 @@ jobs:
         host: ${{ secrets.PROD_HOST }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.PROD_SSH_KEY }}
-        script: sudo service nginx restart
+        script: sudo systemctl restart nginx
