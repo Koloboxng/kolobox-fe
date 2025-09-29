@@ -105,7 +105,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.PROD_SSH_KEY }}
         script: |
-          cd /var/www/html/vue/kolobox-webclient-prod
+          cd /home/ubuntu/mayowa-branch
           git pull origin main
           
     - name: Deploy built files
@@ -115,7 +115,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.PROD_SSH_KEY }}
         source: "dist/*"
-        target: "/var/www/html/vue/kolobox-webclient-prod/"
+        target: "/home/ubuntu/mayowa-branch/"
         
     - name: Restart nginx
       uses: appleboy/ssh-action@v0.1.7
